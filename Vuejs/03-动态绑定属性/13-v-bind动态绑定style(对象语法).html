@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+	<!-- <h2 :style="{key(属性名):value(属性值)}">{{message}}</h2> -->
+	
+	<!-- '50px必须加上单引号，否则是当作一个变量去解析'-->
+	<h2 :style="{fontSize:'50px'}">{{message}}</h2>
+	
+	<!-- finalSize当成变量使用 -->
+	<h2 :style="{fontSize:finalSize}">{{message}}</h2>
+	<h2 :style="{fontSize:fontz+'px',color:fontc}">{{message}}</h2>
+	</div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+		const app = new Vue({
+			el:'#app',
+			data:{
+                message:'hello',
+				finalSize:"100px",
+				fontz:100,
+				fontc:'red'
+			}
+		})
+	</script>
+</body>
+</html>

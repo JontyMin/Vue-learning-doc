@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+		<img v-bind:src="imgUrl" >
+		<a :href="ahref">点我看看</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+		const app = new Vue({
+			el:'#app',
+			data:{
+				imgUrl:'https://cn.vuejs.org/images/dcloud.gif',
+				ahref:'https://www.github.com'
+			}
+		})
+	</script>
+</body>
+</html>

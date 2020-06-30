@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div id="app">
+   	<h2>{{firstName+' '+lastName}}</h2>
+	<h2>{{firstName}} {{lastName}}</h2>
+	<h2>{{fullName}}</h2>
+   </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+		const app = new Vue({
+			el:'#app',
+			data:{
+               firstName:'Jonty',
+			   lastName:'Wang',
+			},
+			computed: {
+				// 计算属性 返回计算之后的值
+				fullName() {
+					return this.firstName+" "+this.lastName 
+				}
+			},
+		})
+	</script>
+</body>
+</html>

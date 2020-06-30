@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+		<h2>{{message}}</h2>
+        <!-- <h2 class='title' :class="['active','line']">{{message}}</h2> -->
+    <ul>
+    	<li v-for="(m,i) in movies" v-bind:"></li>
+    </ul>
+	</div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+		const app = new Vue({
+			el:'#app',
+			data:{
+                message:'hello',
+				movies:['黑猫警长','小昊佳']
+			}
+		})
+	</script>
+</body>
+</html>

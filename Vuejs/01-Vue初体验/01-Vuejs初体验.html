@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+        {{name}}
+    </div>
+    <div>
+        {{message}}
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // let变量/const 常量
+        // 声明式编程
+        const app = new Vue({
+            el:"#app",//用于挂载要管理的元素
+            data:{
+                //定义数据
+                message:'Hello Vue!',
+                name:'coderwhy'
+            }
+        })
+
+        // 元素js的做法 命令式编程
+        // 1、创建div元素，设置id属性
+        // 2、定义一个变量message
+        // 3、将message变量放在div中显示
+    </script>
+</body>
+</html>
