@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<div id="app">
+		<!-- .stop修饰符 停止冒泡-->
+		<div @click="divClick">
+			<button type="button" @click.stop="btnClick">按钮</button>
+		</div>
+		
+		<!-- .prevent修饰符 阻止默认行为-->
+		<form action="baidu" method="post">
+			<input type="submit" value="提交" @click.prevent="submitClick"/>
+		</form>
+		
+		<!-- 监听某个键盘点击 -->
+		<input type="text" @keyup.enter="keyUp" />
+		
+		<!-- .once 执行一次 -->
+		<button type="button" @click.once="btnClick">执行一次</button>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="text/javascript">
+		const app = new Vue({
+			el:'#app',
+			data:{
+				message:'你好啊'
+			},
+			methods:{
+				btnClick(){
+					console.log("btnClick")
+				},
+				divClick(){
+					console.log('divClick')
+				},
+				submitClick(){
+					console.log('submitClick')
+				},
+				keyUp(){
+					console.log('keyUp')
+				}
+			}
+		})
+	</script>
+	<body>
+	</body>
+</html>
