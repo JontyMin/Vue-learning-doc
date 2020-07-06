@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<span v-if="isUser">
+				<label for="userName">用户名</label>
+				<input type="text"  id="userName" placeholder="用户账号" key="a"/>
+			</span>
+			<span v-else>
+				<label for="userEmail">用户账号</label>
+				<input type="text"  id="userEmail" placeholder="用户邮箱" key="b"/>
+			</span>
+			<button type="button" @click="isUser=!isUser">切换类型</button>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			const app = new Vue({
+				el:'#app',
+				data:{
+					isUser:true
+				}
+			})
+		</script>
+	</body>
+</html>
