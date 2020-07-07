@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<ul>
+				<li v-for="item in letters" :key="item">{{item}}</li>
+			</ul>
+			<button type="button" @click="btnClick">按钮</button>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			const app = new Vue({
+				el:'#app',
+				data:{
+					letters:['a','b','c','d']
+				},
+				methods:{
+					btnClick(){
+						// 1、push方法
+						// this.letters.push('e')
+						
+						// 2、pop() 删除数组最后一个元素
+						//this.letters.pop();
+						
+						// 3、shift() 删除数组第一个元素
+						//this.letters.shift()
+						
+						// 4、unshift() 在数组最前面添加元素
+						// this.letters.unshift('e')
+						// this.letters.unshift('e','f','g')
+						
+						// 5、splice() 删除元素/插入元素/替换元素
+						// 删除元素:第2个参数传入你要删除的元素
+						// 替换元素:第2个参数标识我们要替换几个元素，后面是用于替换前面的元素
+						// 插入元素:第2个参数传入0，并且后面跟插入的元素
+						// this.letters.splice(start,1)
+						// this.letters.splice(1,2,'x','y')
+						// this.letters.splice(1,0,'x','y')
+						
+						// 6、sort() 排序
+						this.letters.sort()
+						
+						// 7、reverse() 反转
+						this.letters.reverse()
+						
+						// 注意: 通过索引修改数组的元素不是响应式
+						this.letters[0]='aa'
+						// set(要修改的对象，索引值，修改的值)
+						Vue.set(this.letters,0,'hh')
+					}
+				}
+			})
+			
+			// 不定参数
+			function sum(...num){
+				console.log(sum)
+			}
+			sum(1,2,3,4)
+		</script>
+	</body>
+</html>

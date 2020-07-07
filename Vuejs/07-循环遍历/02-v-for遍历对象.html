@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<!-- 如果只是获取一个值，那么获取到的是value -->
+			<ul>
+				<li v-for="item in info">{{item}}</li>
+			</ul>
+			<!-- 获取key和value -->
+			<ul>
+				<li v-for="(value,key) in info">{{value}}-{{key}}</li>
+			</ul>
+			<!-- 获取key、value和index -->
+			<ul>
+				<li v-for="(value,key,index) in info">{{value}}-{{key}}-{{index}}</li>
+			</ul>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			const app = new Vue({
+				el:'#app',
+				data:{
+					info:{
+						name:'jonty',
+						age:18,
+						height:1.75
+						
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
