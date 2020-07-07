@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<label for="male">
+				<input type="radio" name="sex" id="male" value="男" v-model="sex"/>男
+			</label>
+			<label for="female">
+				<input type="radio" name="sex" id="female" value="女" v-model="sex"/>女
+			</label>
+			{{sex}}
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			const app = new Vue({
+				el:'#app',
+				data:{
+					sex:'男'
+				},
+				methods:{
+					
+				}
+			})
+		</script>
+	</body>
+</html>

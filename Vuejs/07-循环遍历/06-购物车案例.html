@@ -41,7 +41,7 @@
 						
 					</tfoot>
 				</table>
-				<h3>总价格：{{sumPrice | showPrice}}</h3>
+				<h3>总价格：{{sumPrice }}</h3>
 			</div>
 			<h2 v-else>购物车为空</h2>
 		</div>
@@ -89,11 +89,15 @@
 				},
 				computed:{
 					sumPrice(){
-						let sumPrice=0
+						/*let sumPrice=0
 						for(let i=0;i<this.books.length;i++){
 							sumPrice+=this.books[i].price*this.books[i].count
 						}
-						return sumPrice
+						return sumPrice*/
+						//return this.books.reduce((pre,book)=>pre+(book.price*book.count))
+						return this.books.reduce(function(pre,book){
+							return pre+book.price*book.count
+						},0)
 					}
 				},
 				filters:{
@@ -103,6 +107,59 @@
 					}
 				}
 			})
+			
+			
+			// 编程范式：命令式编程/声明式编程
+			// 编程范式：面向对象编程(第一公民:对象)/函数式编程(第一公民:函数)
+			
+			const nums=[12,13,41,52,124,432,532,232]
+			// 1、需求：取出所有小于100的数字
+			/*let newNums=[]
+			for(let n of nums){
+				if(n<100){
+					newNums.push(n)
+				}
+			}*/
+			
+			
+			/* filter/map/reduce 
+			filter中的回调函数有一个要求：必须返回一个boolean值
+			true:当返回true时，函数内部会自动将这次回调的n加入到新的数组
+			false:当返回false时，函数内部会过滤掉这次的n
+			
+			let newNums=nums.filter(function(n){
+				return n<100
+			})
+			console.log(newNums)
+			
+			// map函数的使用
+			newNums.map(function(n){
+				return n*2
+			})
+			console.log(newNums)
+			
+			// reduce 对数组中的内容进行汇总
+			let total = newNums.reduce(function(preValue,n){
+				return preValue+n
+			},0)
+			
+			1、preValue 0 n 12
+			2、preValue 12 n 13
+			3、preValue 25 n 41
+			4、preValue 66 n 52
+			118
+			
+		   
+		   let total = nums.filter(function(n){
+			   return n<100
+		   }).map(function(n){
+			   return n *2
+		   }).reduce(function(preValue,n){
+			   return preValue+n
+		   },0)
+		   */
+		  let total = nums.filter(n=>n<100).map(n=>n*2).reduce((pre,n)=>pre+n)
+			console.log(total)
 		</script>
 	</body>
 </html>
