@@ -1,7 +1,11 @@
 <template>
  <div>
     <img alt="Vue logo" src="../assets/logo.png">
-     <demo msg="what i cannot create, i do not understand"></demo>
+     <demo msg="这是我们的组件"></demo>
+    <h1>这是hello页面</h1>
+    <router-view>
+      
+    </router-view>
  </div>
 </template>
 
