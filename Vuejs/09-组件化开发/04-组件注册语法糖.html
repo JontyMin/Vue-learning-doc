@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<cpn1></cpn1>
+			<cpn2></cpn2>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+			// 1、注册全局
+			Vue.component('cpn1',{
+				template:`
+					<div>
+						<h2>我是标题11</h2>
+						<p>我是内容11</p>
+					</div>
+				`
+			})
+			
+			
+			// 2、注册局部
+			const app = new Vue({
+				el:'#app',
+				components:{
+					'cpn2':{
+						template:`
+							<div>
+								<h2>我是标题</h2>
+								<p>我是内容</p>
+							</div>
+						`
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

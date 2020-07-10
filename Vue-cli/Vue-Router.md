@@ -275,3 +275,44 @@ routes: [
 ```javascript
 {{$route.params.username}}
 ```
+
+## Vue-Router重定向
+
+### 1、redirect基本重定向
+
+在路由配置文件中（/src/router/index.js）把原来的component换成redirect参数。
+
+```javascript
+export default new Router({
+  routes: [
+    {
+      path: '/',
+      component: Hello
+    },{
+      path:'/params/:newsId(\\d+)/:newsTitle',
+      component:Params
+    },{
+      path:'/goback',
+      edirect:'/'
+    }
+  ]
+})
+```
+
+这里设置了goback路由，但是它并没有配置任何component（组件），而是直接redirect到path:’/’下了，这就是一个简单的重新定向。
+
+### 2、重定向时传递参数
+
+我们已经学会了通过url来传递参数，那我们重定向时如果也需要传递参数怎么办？其实vue也已经为我们设置好了，我们只需要在ridirect后边的参数里复制重定向路径的path参数就可以了。可能你看的有点晕，我们来看一段代码：
+
+```
+{
+  path:'/params/:newsId(\\d+)/:newsTitle',
+  component:Params
+},{
+  path:'/goParams/:newsId(\\d+)/:newsTitle',
+  redirect:'/params/:newsId(\\d+)/:newsTitle'
+}
+```
+
+已经有了一个params路由配置，再设置一个goParams的路由重定向，并传递了参数。这时候路由参数就可以传递给params.vue组件了。参数接收方法和正常的路由接收方法一样。

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			
+			<cpn></cpn>
+			
+			<!-- 1、 -->
+			<script type="text/x-template" id="cpn">
+				<div>
+					<h2>{{title}}</h2>
+					<p>我是内容123</p>
+				</div>
+			</script>
+			
+			<!-- template -->
+			<!-- <template id="cpn">
+				<div>
+					<div>
+						<h2>{{title}}</h2>
+						<p>我是内容11123</p>
+					</div>
+				</div>
+			</template> -->
+			
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			
+			Vue.component('cpn',{
+				template:'#cpn',
+				data(){
+					// script
+					return{
+						title:'我是新的标题'
+					}
+				}
+				
+			})
+			
+			const app = new Vue({
+				el:'#app',
+				data:{
+					message:'ha',
+					// template
+					title:'我是标题'
+				},
+				
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<cpn2></cpn2>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+			// 1、创建第1个组件 子组件
+			const cpnC1 = Vue.extend({
+				template:`
+					<div>
+						<h2>我是标题</h2>
+						<p>我是内容</p>
+					</div>
+				`
+			})
+			
+			// 2、创建第2个组件 父组件
+			const cpnC2 = Vue.extend({
+				template:`
+					<div>
+						<h2>我是标题22</h2>
+						<p>我是内容22</p>
+						<cpn1></cpn1>
+					</div>
+				`,
+				components:{
+					cpn1:cpnC1
+				}
+			})
+			
+			const app = new Vue({
+				el:'#app',
+				data:{
+					message:'你好啊'
+				},
+				components:{
+					cpn2:cpnC2
+				}
+			})
+		</script>
+	</body>
+</html>

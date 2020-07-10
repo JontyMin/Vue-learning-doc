@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<cpn></cpn>
+			<cpn></cpn>
+			<cpn></cpn>
+			<cpn></cpn>
+		</div>
+		<template id="cpn">
+			<div>
+				<h2>当前计数:{{counter}}</h2>
+				<button @click="increment">+</button>
+				<button @click="decrement">-</button>
+			</div>
+			
+		</template>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+			Vue.component('cpn',{
+				template:'#cpn',
+				data(){
+					return {
+						counter:0
+					}
+				},
+				// data:{
+				// 	counter:0
+				// },
+				methods:{
+					increment(){
+						this.counter++
+					},
+					decrement(){
+						this.counter--
+					}
+					
+				}
+				
+			})
+			
+			const app = new Vue({
+				el:'#app',
+			})
+		</script>
+		
+		<script>
+			// function abc(){
+			// 	return {
+			// 		name:'why',
+			// 		age:18
+			// 	}
+			// }
+			
+			// // 每次都会在栈创建一个新的空间，不是同一个对象，所以不会影响 
+			
+			
+			
+			const obj = { // 0x100
+				name:'why',
+				age:18
+			}
+			
+			function abc(){
+				return obj  // 实际上返回的是 obj的内存地址 0x1000
+			}
+			
+			let obj1 = abc() // 指向obj 是同一个对象， 会被更改
+			let obj2 = abc()
+			let obj3 = abc()
+			
+			obj1.name='jonty'
+			
+			console.log(obj2)
+			console.log(obj3)
+			
+		</script>
+	</body>
+</html>
