@@ -50,7 +50,7 @@ npm install -g @vue/cli
 vue create hello-world
 ```
 
-![](images/2.png)
+![](https://gitee.com/my_netinlove/Picturebed/raw/master/images/2.png)
 
 会被提示选取一个preset。可以选择默认的包含基本的Babel+ESLint
 
