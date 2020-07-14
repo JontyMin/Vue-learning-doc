@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- <div id="app">
+			
+			 slot已废弃
+			<cpn><span slot="center">标题</span></cpn>
+		</div>
+		
+		<template id='cpn'>
+			<div>
+				<slot name="left"><span>左边</span></slot>
+				<slot name="center"><span>中间</span></slot>
+				<slot name="right"><span>右边</span></slot>
+				
+				<slot></slot>
+			</div>
+		</template> -->
+		
+		<div id="app">
+			
+			<!-- v-slot只能加在<template>上 -->
+				<cpn v-slot:left><span>标题</span></cpn>
+			</div>
+			
+			<template id='cpn'>
+				<div>
+					<slot name="left"><span>左边</span></slot>
+					<slot name="center"><span>中间</span></slot>
+					<slot name="right"><span>右边</span></slot>
+					
+					<slot></slot>
+				</div>
+			</template>
+		
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			const app = new Vue({
+				el:'#app',
+				data:{
+					message:'hello'
+				},
+				components:{
+					cpn:{
+						template:'#cpn',
+					
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<cpn></cpn>
+			
+			<cpn>
+				<template v-slot="slot">
+					<span v-for="item in slot.data">{{item}}-</span>
+				</template>
+			</cpn>
+		</div>
+		
+		<template id='cpn'>
+				<div>
+					<slot :data="pLanguages">
+						<ul>
+							<li v-for="item in pLanguages">{{item}}</li>
+						</ul>
+					</slot>
+					
+				</div>
+			</template>
+		
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			const app = new Vue({
+				el:'#app',
+				data:{
+					message:'hello'
+				},
+				components:{
+					cpn:{
+						template:'#cpn',
+						data(){
+							return{
+								pLanguages:['javaScript','C++','C#','Python']
+							}
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
