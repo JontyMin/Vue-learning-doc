@@ -43,7 +43,7 @@ export default router
 
 实现以下效果，点击Hello，打开一个新页面 ，地址栏 http://localhost:8080/#/hello
 
-![](images/15.png)
+![](https://gitee.com/my_netinlove/Picturebed/raw/master/images/15.png)
 
 - 在src/view目录下，新建Hello.vue文件。
 
@@ -141,7 +141,7 @@ import Hello from '../views/Hello.vue'
 
 运行`npm run serve`
 
-![](images/16.png)
+![](https://gitee.com/my_netinlove/Picturebed/raw/master/images/16.png)
 
 ## Vue-Router配置子路由
 
@@ -161,7 +161,7 @@ import Hello from '../views/Hello.vue'
  <router-link to="/about">About</router-link>
 ```
 
-![](images/17.png)
+![](https://gitee.com/my_netinlove/Picturebed/raw/master/images/17.png)
 
 ### 改写components/Hello.vue页面
 
@@ -233,7 +233,7 @@ children:[
 {path:'xx',component:xxx},
 ```
 
-![](images/18.png)
+![](https://gitee.com/my_netinlove/Picturebed/raw/master/images/18.png)
 
 ## Vue-router参数传递
 

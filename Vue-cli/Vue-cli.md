@@ -40,7 +40,7 @@ npm install -g @vue/cli
 
 检查是否安装成功：
 
-![](images/1.png)
+![](https://gitee.com/my_netinlove/Picturebed/raw/master/images/1.png)
 
 ### 创建一个项目
 
@@ -54,7 +54,7 @@ vue create hello-world
 
 会被提示选取一个preset。可以选择默认的包含基本的Babel+ESLint
 
-![](images/3.png)
+![](https://gitee.com/my_netinlove/Picturebed/raw/master/images/3.png)
 
 执行`cd hello-world`,来到项目根目录
 
@@ -64,11 +64,11 @@ vue create hello-world
 npm run serve
 ```
 
-![](images/4.png)
+![](https://gitee.com/my_netinlove/Picturebed/raw/master/images/4.png)
 
 浏览器访问：http://localhost:8080/
 
-![](images/5.png)
+![](https://gitee.com/my_netinlove/Picturebed/raw/master/images/5.png)
 
 `vue create`命令可选项：
 
@@ -76,7 +76,7 @@ npm run serve
 vue create --help
 ```
 
-![](images/6.png)
+![](https://gitee.com/my_netinlove/Picturebed/raw/master/images/6.png)
 
 ```cmd
 用法：create [options] <app-name>
@@ -107,27 +107,27 @@ vue create --help
 vue ui
 ```
 
-![](images/7.png)
+![](https://gitee.com/my_netinlove/Picturebed/raw/master/images/7.png)
 
 点击创建，选择目录，然后点击在此创建项目
 
-![](images/8.png)
+![](https://gitee.com/my_netinlove/Picturebed/raw/master/images/8.png)
 
 选择默认或者手动配置项目
 
 > 预设就是一套定义好的插件和配置。可以将自己的配置保存成预设，方便以后创建项目使用
 
-![](images/10.png)
+![](https://gitee.com/my_netinlove/Picturebed/raw/master/images/10.png)
 
 ![](images/11.png)
 
 使用开源ESlint代码分析，关闭保存时编译，然后创建项目
 
-![](images/12.png)
+![](https://gitee.com/my_netinlove/Picturebed/raw/master/images/12.png)
 
 等待创建完成，进入仪表盘
 
-![](images/14.png)
+![](https://gitee.com/my_netinlove/Picturebed/raw/master/images/14.png)
 
 点击运行—>启动App
 
