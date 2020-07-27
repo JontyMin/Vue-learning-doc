@@ -2,9 +2,9 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/hello">Hello</router-link>|
-      <router-link to="/hello/hi1">Hi1</router-link>|
-      <router-link to="/hello/hi2">Hi2</router-link>|
+      <router-link to="/hello" tag="button" replace>Hello</router-link>|
+      <router-link to="/hello/hi1" tag="button" replace>Hi1</router-link>|
+      <router-link to="/hello/hi2" tag="button">Hi2</router-link>|
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
